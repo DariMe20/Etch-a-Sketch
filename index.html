@@ -13,15 +13,15 @@
 <body>
     <h1>Etch-a-Sketch</h1>
     <div class="options_container">
-        <div class="color" data-clr="#0000"></div>
+        <button class="clear" onclick="resetBoard()">Clear</button>
+        <button class="save">Save</button>
+        <div class="color" data-clr="#000000"></div>
         <div class="color" data-clr="red"></div>
         <div class="color" data-clr="orange"></div>
         <div class="color" data-clr="green"></div>
         <div class="color" data-clr="blue"></div>
         <div class="color" data-clr="purple"></div>
         <div class="color" data-clr="#fff"></div>
-        <button class="clear" onclick="resetBoard()">Clear</button>
-        <button class="save">Save</button>
         <input type="color" value="#FFFFFF" id="chooseColor">
         <input type="range" name="InputR" id="InputRangeId" value="32" min="16" max="100"
             oninput="OutputRangeId.value = InputRangeId.value">

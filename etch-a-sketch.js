@@ -37,6 +37,7 @@ for (let i = 0; i < colorsDiv.length; i++) {
     });
 }
 
+//Add 
 //Function to change color
 function changeColor(event, theColor){
     event.target.style.backgroundColor = theColor;
