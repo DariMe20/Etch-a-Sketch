@@ -1,4 +1,4 @@
-const container = document.getElementsByClassName('board_container')[0]; // Access the first element with class 'board_container'
+const container = document.querySelector('.board_container'); // Access the first element with class 'board_container'
 
 // Create 16x16 grid
 for (let i = 0; i < 16; i++) {
@@ -13,3 +13,5 @@ for (let i = 0; i < 16; i++) {
         container.appendChild(div);
     }
 }
+
+const cells = document.getElementsByClassName('cell'); /*the array of cells*/

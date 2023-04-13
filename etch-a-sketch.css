@@ -1,14 +1,19 @@
 
+h1{
+    text-align: center;
+}
 
 .board_container{
     display:grid;
     grid-template-columns: repeat(16, 1fr);
+    border:0.1px solid black;
     height: 320px;
+    width:320px;
     margin:auto;
-    width:80%;
 }
 
 .cell{
-    background-color:red;
-    border:1px solid rgb(131, 77, 77);
+    background-color: white;
+    border:0.1px solid rgb(131, 77, 77);
 }
+
