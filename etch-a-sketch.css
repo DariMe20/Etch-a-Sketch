@@ -139,7 +139,7 @@ input[type="color"]:hover{
 
 .cell{
     background-color: white;
-    /*border:0.1px solid black;*/
+    border:0.0001px solid rgb(248, 245, 245);
     
 }
 
