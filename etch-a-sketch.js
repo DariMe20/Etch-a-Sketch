@@ -50,7 +50,7 @@ for (let i = 0; i < colorsDiv.length; i++) {
 }
 
 //Add event listener for custom input color
-CustomColor.addEventListener('click', function(event){
+CustomColor.addEventListener('input', function(event){
     theColor = event.target.value;
 })
 
