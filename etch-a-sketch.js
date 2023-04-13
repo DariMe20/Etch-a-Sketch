@@ -4,6 +4,7 @@ const colorsDiv = document.getElementsByClassName('color');
 const CustomColor = document.getElementById('chooseColor');
 const RangeInput = document.getElementById('InputRangeId');
 const RangeOutput = document.getElementById("OutputRangeId");
+const saveBtn = document.getElementById("")
 
 // Add event listener to range input
 RangeInput.addEventListener('input', ChangeGridSize);
@@ -79,4 +80,40 @@ function ChangeGridSize(){
     
     //generate the new grid 
     CreateGrid(size);
+}
+
+//Function to save the drawing in clipboard
+function saveBoard(){
+    //create a canvas layout
+    const canvas = document.createElement('canvas');
+
+    //get size of container
+    const containerRect = container.getBoundingClientRect();
+
+    //set canvas dimensions to match the container
+    canvas.width = containerRect.width;
+    canvas.height = containerRect.height;
+
+    //get the canvas context
+    const ctx = canvas.getContext('2d');
+
+    //Loop through each cell in the container
+    const cells = container.getElementsByClassName('cell');
+
+    for (let i = 0; i < cells.length; i++) {
+
+        // Get the cell position and color
+        const cellRect = cells[i].getBoundingClientRect();
+
+        //ghet the horizontal index position
+        const x = cellRect.left - containerRect.left;
+
+        //ghet the vertical index position
+        const y = cellRect.top - containerRect.top;
+        const color = cells[i].style.backgroundColor;
+
+        // Draw the cell on the canvas
+        ctx.fillStyle = color;
+        ctx.fillRect(x, y, cells[i].offsetWidth, cells[i].offsetHeight);
+    }
 }
