@@ -1,4 +1,9 @@
-const container = document.querySelector('.board_container'); // Access the first element with class 'board_container'
+//Access container, colors, custom color imput and output from html document  
+const container = document.querySelector('.board_container');
+const colorsDiv = document.getElementsByClassName('color');
+const CustomColor = document.getElementById('chooseColor');
+const RangeInput = document.getElementById('InputRangeId');
+const RangeOutput = document.getElementById("OutputRangeId");
 
 // Create 16x16 grid
 for (let i = 0; i < 16; i++) {
@@ -14,29 +19,33 @@ for (let i = 0; i < 16; i++) {
     }
 }
 
-const cells = document.getElementsByClassName('cell'); /*the array of cells*/
-const color = document.getElementsByClassName('color');
-const CustomColor = document.getElementById('chooseColor');
-const RangeInput = document.getElementById('InputRangeId');
-const RangeOutput = document.getElementById("OutputRangeId");
+//Access cells 
+const cells = document.getElementsByClassName('cell');
 
 //Add event listeners to cell
-for(let i=0; i<cells.length; i++)
-{
-   {
-   cells[i].addEventListener('mouseover', changeColor);
+for (let i = 0; i < cells.length; i++) {
+    //Event listener to change colors on mouse hover
+    cells[i].addEventListener('mouseover', function (event) {
+        changeColor(event, theColor);
+    });
+}
 
-   //Function to change color
-   function changeColor(event, color){
-    event.target.style.backgroundColor = color.value;
-   }
+//Add event listeners for color divs
+for (let i = 0; i < colorsDiv.length; i++) {
+    colorsDiv[i].addEventListener('click', function(event){
+        theColor = event.target.dataset.clr;
+    });
+}
 
+//Function to change color
+function changeColor(event, theColor){
+    event.target.style.backgroundColor = theColor;
 }
 
 // Function to reset the board
 function resetBoard() {
     for (let i = 0; i < cells.length; i++) {
-        cells[i].style.backgroundColor = 'white'; // Reset cell color to white
+        cells[i].style.backgroundColor = 'white';
     }
 } 
-}
+
