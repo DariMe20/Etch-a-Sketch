@@ -62,6 +62,7 @@ function changeColor(event, theColor){
 
 // Function to reset the board
 function resetBoard() {
+    const cells = container.getElementsByClassName('cell');
     for (let i = 0; i < cells.length; i++) {
         cells[i].style.backgroundColor = 'white';
     }
