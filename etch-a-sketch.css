@@ -1,7 +1,31 @@
+body{
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 h1{
     text-align: center;
 }
+
+.options_container{
+    width:fit-content;
+    margin: auto;
+    height:40px;
+    position:relative;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .5s;
+    background: linear-gradient(to right, rgb(0, 200, 255), rgb(255, 0, 174));
+    padding: 8px;
+    border-radius: 25px;
+    border: 12px solid white;
+}
+
 
 .board_container{
     display:grid;
