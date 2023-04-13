@@ -10,13 +10,16 @@ RangeInput.addEventListener('input', ChangeGridSize);
 
 CreateGrid(16);
 
+//function that creates a grid
 function CreateGrid(size){
+    //initialize empty container
     container.innerHTML ='';
 
     // Create new grid with specified size
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
+    //create cells inside grid 
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
             // Create div element
@@ -24,6 +27,11 @@ function CreateGrid(size){
     
             // Add div element to class list
             div.classList.add('cell');
+
+            // Add event listener to cell
+            div.addEventListener('mouseover', function(event){
+                changeColor(event, theColor);
+            });
     
             // Add cell to container
             container.appendChild(div);
@@ -31,16 +39,8 @@ function CreateGrid(size){
     } 
 }
 
-//Access cells 
-const cells = document.getElementsByClassName('cell');
+//Access cells -const cells = document.getElementsByClassName('cell');
 
-//Add event listeners to cell
-for (let i = 0; i < cells.length; i++) {
-    //Event listener to change colors on mouse hover
-    cells[i].addEventListener('mouseover', function (event) {
-        changeColor(event, theColor);
-    });
-}
 
 //Add event listeners for color divs
 for (let i = 0; i < colorsDiv.length; i++) {
@@ -67,3 +67,15 @@ function resetBoard() {
     }
 } 
 
+//Update grid size based on Range Input 
+function ChangeGridSize(){
+
+    //get range input from document
+    const size = RangeInput.value;
+
+    //update output range with size
+    document.getElementById('OutputRangeId').textContent = size;
+    
+    //generate the new grid 
+    CreateGrid(size);
+}
