@@ -3,6 +3,9 @@ body{
     padding:0;
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 
@@ -21,11 +24,96 @@ h1{
     justify-content: center;
     transition: opacity .5s;
     background: linear-gradient(to right, rgb(0, 200, 255), rgb(255, 0, 174));
-    padding: 8px;
+    padding: 7px;
     border-radius: 25px;
     border: 12px solid white;
 }
 
+.options_container div, button, input{
+    margin:4px;
+}
+
+.options_container:hover{
+    cursor: pointer;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.color{
+    height:23px;
+    border: 1.5px solid white;
+    border-radius: 50%;
+    width:23px;
+    background-color: blue;
+    transition: transform .3s;
+}
+
+.color:hover{
+    transform: scale(1.2);
+}
+
+.color:nth-child(1){
+    background-color: black;
+}
+
+.color:nth-child(2){
+    background-color: red;
+}
+
+.color:nth-child(3){
+    background-color: orange;
+}
+
+.color:nth-child(4){
+    background-color: green;
+}
+
+.color:nth-child(5){
+    background-color: blue;
+}
+
+.color:nth-child(6){
+    background-color: blueviolet;
+}
+
+.color:nth-child(7){
+    background-color: white;
+}
+
+button{
+    border:none;
+    outline:none;
+    padding:5px 6px;
+    border-radius: 3px;
+    color:black;
+    border:1px solid rgb(92, 92, 92);
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.clear:hover{
+    background-color: rgb(237, 255, 45);
+}
+
+.save:hover{
+    background-color: rgb(237, 255, 45);
+}
+
+input[type="color"]{
+    width:50px;
+    height:30px;
+    
+}
+input[type="color"]:hover{
+    cursor: pointer;
+}
+
+#OutputRangeId{
+    color:white;
+    font-weight: bold;
+}
 
 .board_container{
     display:grid;
