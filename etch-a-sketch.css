@@ -119,7 +119,6 @@ input[type="color"]:hover{
     top:20px;
     position: relative;
     display:grid;
-    grid-template-columns: repeat(16, 1fr);
     border:0.1px solid black;
     height: 320px;
     width:320px;

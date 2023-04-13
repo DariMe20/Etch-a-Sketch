@@ -5,18 +5,30 @@ const CustomColor = document.getElementById('chooseColor');
 const RangeInput = document.getElementById('InputRangeId');
 const RangeOutput = document.getElementById("OutputRangeId");
 
-// Create 16x16 grid
-for (let i = 0; i < 16; i++) {
-    for (let j = 0; j < 16; j++) {
-        // Create div element
-        const div = document.createElement('div');
+// Add event listener to range input
+RangeInput.addEventListener('input', ChangeGridSize);
 
-        // Add div element to class list
-        div.classList.add('cell');
+CreateGrid(16);
 
-        // Add cell to container
-        container.appendChild(div);
-    }
+function CreateGrid(size){
+    container.innerHTML ='';
+
+    // Create new grid with specified size
+    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
+    for (let i = 0; i < size; i++) {
+        for (let j = 0; j < size; j++) {
+            // Create div element
+            const div = document.createElement('div');
+    
+            // Add div element to class list
+            div.classList.add('cell');
+    
+            // Add cell to container
+            container.appendChild(div);
+        }
+    } 
 }
 
 //Access cells 
