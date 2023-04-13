@@ -1,6 +1,6 @@
 # Etch-a-Sketch
 
-**Live-preview**
+**Live-preview - https://darime20.github.io/Etch-a-Sketch/**
 
 Etch-a-Sketch is a web-based drawing application that allows users to create digital drawings by "sketching" on a virtual grid.
 **Please note that this application works best on computer, phone optimization is in progress**
