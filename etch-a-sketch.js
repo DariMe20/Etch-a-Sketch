@@ -37,7 +37,12 @@ for (let i = 0; i < colorsDiv.length; i++) {
     });
 }
 
-//Add 
+//Add event listener for custom input color
+CustomColor.addEventListener('click', function(event){
+    theColor = event.target.value;
+})
+
+
 //Function to change color
 function changeColor(event, theColor){
     event.target.style.backgroundColor = theColor;
