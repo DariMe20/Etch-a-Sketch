@@ -6,17 +6,24 @@ body{
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top:50px;
+    background-color: aliceblue;
 }
 
 
 h1{
+    font-size: 45px;
     text-align: center;
+    position: relative;
+    bottom:20px;
 }
 
 .options_container{
     width:fit-content;
     margin: auto;
-    height:30px;
+    height:45px;
     position:relative;
     display:flex;
     flex-direction: row;
@@ -24,9 +31,10 @@ h1{
     justify-content: center;
     transition: opacity .5s;
     background: linear-gradient(to right, rgb(0, 200, 255), rgb(255, 0, 174));
-    padding: 7px;
+    padding: 5px;
+    bottom:20px;
     border-radius: 25px;
-    border: 12px solid white;
+    border: 1px solid aliceblue;
 }
 
 .options_container div, button, input{
@@ -110,7 +118,11 @@ input[type="color"]:hover{
     cursor: pointer;
 }
 
+#InputRangeId{
+    width:80px;
+}
 #OutputRangeId{
+
     color:white;
     font-weight: bold;
 }
@@ -119,9 +131,9 @@ input[type="color"]:hover{
     top:20px;
     position: relative;
     display:grid;
-    border:0.1px solid black;
-    height: 400px;
-    width:400px;
+    border:3px solid black;
+    height: 500px;
+    width:500px;
     margin:auto;
 }
 
@@ -131,3 +143,37 @@ input[type="color"]:hover{
     
 }
 
+@media screen and (max-width:500px){
+    .options_container div, button, input{
+        margin:2px;
+    }
+
+    .color{
+        height:20px;
+        width:20px;
+    }
+    
+    #InputRangeId{
+        width:50px;
+    }
+
+    .board_container{
+        height: 300px;
+        width:300px;
+    }
+
+    button{
+        padding:3px;
+        border-radius: 3px;
+       font-size: 12px;
+    }
+    #OutputRangeId{
+        font-size: 12px;
+    }
+    
+    input[type="color"]{
+        width:35px;
+        height:25px;
+       
+}
+}
